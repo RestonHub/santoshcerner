@@ -11,9 +11,9 @@ spec:
     spec:
       containers:
       - name: santosh-cerneroci
-        image: ksantosh464/test-demo
-        command: [ "/bin/sh", "-c", "--" ]
-        args: [ "while true; do sleep 30; done; npm start;" ]
+        image: iad.ocir.io/gse00014942/santoshtest:test
+        #command: [ "/bin/sh", "-c", "--" ]
+        #args: [ "while true; do sleep 30; done; npm start;" ]
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
