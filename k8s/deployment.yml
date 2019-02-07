@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: santosh-cerner
-        image: ksantosh464/test-demo
+        image: iad.ocir.io/gse00014942/santoshtest:test
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
