@@ -1,0 +1,52 @@
+box: 
+  id: node:latest
+  ports: 
+    - "3000"
+
+# just to test the node app locally
+dev:
+  steps:
+    - npm-install
+    - internal/watch:
+        code: node app.js
+        reload: true
+
+# Build definition
+build:
+  # The steps that will be executed on build
+  steps:
+    - script:
+        name: export password
+        code: | 
+          export DB_PW='Testinstance123#'
+
+    - script:
+        name: clean node
+        code: |
+          rm -rf node_modules/ && npm update
+
+    # A step that executes `npm install` command
+    - npm-install
+
+    - script:
+        name: run app
+        code: |
+           node --version
+
+   
+
+# push to OCIR
+# repo DOES NOT INCLUDE TAG
+# updated registry && changed PORT to 80
+push-release:
+  steps:
+    - internal/docker-push:
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
+        repository: $DOCKER_REPO
+        registry: $DOCKER_REGISTRY
+        tag: ocir
+        working-dir: /pipeline/source
+        ports: $PORT
+        env: PORT=$PORT
+        cmd: npm start
