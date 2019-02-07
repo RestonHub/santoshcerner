@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: santosh-cerner
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: santosh-cerner
+    spec:
+      containers:
+      - name: santosh-cerner
+        image: ksantosh464/test-demo
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        resources:
+            limits:
+              cpu: "0.5"
+            requests:
+              cpu: "0.25"
