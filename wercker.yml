@@ -1,7 +1,8 @@
-# just to test the node app locally
-internal/docker-build:
-    dockerfile: Dockerfile
-    image-name: santosh-image
+build:
+  steps:
+    - internal/docker-build:
+        dockerfile: Dockerfile
+        image-name: santosh-image
    
 
 # push to OCIR
