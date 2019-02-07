@@ -7,4 +7,3 @@ COPY package*.json ./
 RUN npm install
 COPY . /usr/santosh/cerner
 CMD ["npm", "start"]
-CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"

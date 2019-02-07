@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: santosh-cerneroci
-        image: iad.ocir.io/gse00014942/santoshtest:test
+        image: iad.ocir.io/gse00014942/santoshtest/test-demo:latest
         #command: [ "/bin/sh", "-c", "--" ]
         #args: [ "while true; do sleep 30; done; npm start;" ]
         imagePullPolicy: Always
