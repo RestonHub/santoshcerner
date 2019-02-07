@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: santosh-cerner
+  name: santosh-cerneroci
   labels:
-    app: santosh-cerner
+    app: santosh-cerneroci
 spec:
   selector:
-    app: santosh-cerner
+    app: santosh-cerneroci
   ports:
   - port: 3000
     protocol: TCP
-    nodePort: 30001
+    nodePort: 30003
   type: LoadBalancer

@@ -7,3 +7,4 @@ COPY package*.json ./
 RUN npm install
 COPY . /usr/santosh/cerner
 CMD ["npm", "start"]
+CMD ["sh", "-c", "tail -f /dev/null"]

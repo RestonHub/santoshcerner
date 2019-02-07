@@ -1,16 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: santosh-cerneroci
+  name: santosh-cerner
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: santosh-cerneroci
+        app: santosh-cerner
     spec:
       containers:
-      - name: santosh-cerneroci
+      - name: santosh-cerner
         image: ksantosh464/test-demo
         command: [ "/bin/sh", "-c", "--" ]
         args: [ "while true; do sleep 30; done; npm start;" ]
