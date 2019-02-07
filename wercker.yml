@@ -1,3 +1,6 @@
+box: 
+  id: node:8
+
 build:
   steps:
     - internal/docker-build:
